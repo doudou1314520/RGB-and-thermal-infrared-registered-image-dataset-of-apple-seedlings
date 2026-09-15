@@ -1,0 +1,35 @@
+{
+  "camera": "FLIR A655sc",
+  "metadata": {
+    "RawThermalImageWidth": 640,
+    "RawThermalImageHeight": 480,
+    "Emissivity": 0.949999988079071,
+    "ObjectDistance": 1,
+    "ReflectedApparentTemperature": 19.9999938964844,
+    "AtmosphericTemperature": 19.9999938964844,
+    "IRWindowTemperature": 19.9999938964844,
+    "IRWindowTransmission": 1,
+    "RelativeHumidity": 0.5,
+    "PlanckR1": 17042.341796875,
+    "PlanckB": 1436.69995117188,
+    "PlanckF": 1,
+    "PlanckO": -4332,
+    "PlanckR2": 0.014618806540966
+  },
+  "emissivity_atmosphere_correction": true,
+  "source_seq_filename": "R1L1.seq",
+  "source_seq_sha256": "7813963edca6a3f795d997c745693ce24ebc5f4f329663719078732a7799f7d0",
+  "source_mp4_filename": "R1L1.mp4",
+  "source_mp4_sha256": "08010bff8409ccdc03b7cf8b1fcc1ed2ec455c4eb35b9055fee84476759d6491",
+  "rgb_video": {
+    "fps": 60.01159623124928,
+    "frame_count": 2729,
+    "width": 1080,
+    "height": 1920,
+    "duration_sec": 45.47454444444445
+  },
+  "frame_indices": "zero-based",
+  "rgb_extraction": "Sequential OpenCV decode at archived mapped frame indices; PNG lossless encoding.",
+  "thermal_extraction": "Native SEQ RawData uint16; calibrated float32 Celsius companion. No geometric registration or masking.",
+  "max_temperature_statistic_difference_from_archived_export_c": 1.4210854715202004e-14
+}
