@@ -70,8 +70,20 @@ All released images were read back and checked for exact array equality against 
 
 The 450 views belong to **five biological plants**, not 450 independent biological samples. The point clouds are derived outputs. This release supplies paired native images and final point clouds; it does not include all calibration, segmentation, camera-pose, and registration intermediates required to reproduce the complete pipeline.
 
-## 中文说明
+## 数据集描述
 
-本次公开 2026 年 7 月 13 日采集的 5 株苹果幼苗（R1L1、R1L2、R1L4、R2L1、R2L2），每株 90 对 RGB—热红外图像，共 450 对，以及对应的 5 个最终温度点云。
+### 1. 数据来源
 
-RGB 和热红外图像按已有逐帧配对表从原始 MP4/SEQ 中恢复，未进行掩膜、缩放或几何配准。热红外同时提供 16 位原始探测器数据和摄氏温度 Float32 TIFF；二者是同一观测的两种表示。最终 PLY 为原文件完整复制，保留 `temperature_c` 和 `temperature_source` 等字段。配对图像属于时间对应，不表示像素已对齐。请使用 Git LFS 下载实际数据。
+本数据集由本研究自行采集，用于苹果幼苗 RGB—热红外图像配准与三维温度信息融合研究。公开数据为研究数据的一个子集，包含 2026 年 7 月 13 日采集的 5 株苹果幼苗，共 450 对 RGB—热红外图像及对应的 5 个最终热红外温度点云。
+
+### 2. 采集流程
+
+使用 RGB 相机和 FLIR A655sc 热红外相机获取幼苗的多视角影像，按照逐帧对应关系提取图像，并提供热红外原始探测器数据及经辐射校准的摄氏温度图像。通过图像配准与多视角温度融合，将温度信息赋予三维点云。公开的原始图像具有时间对应关系，尚未进行像素级几何配准。
+
+### 3. 标注信息
+
+数据附有植株编号、采集日期、帧索引、时间记录及 RGB—热红外帧对应表。点云包含三维坐标、颜色、温度及温度来源等属性，可区分直接融合、空间插值和未赋温的点。
+
+### 4. 数据获取方式
+
+数据通过 [GitHub 仓库](https://github.com/doudou1314520/RGB-and-thermal-infrared-registered-image-dataset-of-apple-seedlings)公开获取。图像和点云文件采用 Git LFS 存储，使用 Git 与 Git LFS 克隆仓库后，执行 `git lfs pull` 即可获取完整数据文件。
