@@ -70,20 +70,22 @@ All released images were read back and checked for exact array equality against 
 
 The 450 views belong to **five biological plants**, not 450 independent biological samples. The point clouds are derived outputs. This release supplies paired native images and final point clouds; it does not include all calibration, segmentation, camera-pose, and registration intermediates required to reproduce the complete pipeline.
 
-## 数据集描述
+## Dataset description
 
-### 1. 数据来源
+### 1. Data source
 
-本数据集由本研究自行采集，用于苹果幼苗 RGB—热红外图像配准与三维温度信息融合研究。公开数据为研究数据的一个子集，包含 2026 年 7 月 13 日采集的 5 株苹果幼苗，共 450 对 RGB—热红外图像及对应的 5 个最终热红外温度点云。
+The authors collected this dataset for research on RGB-thermal image registration and three-dimensional temperature fusion in apple seedlings. This release is a subset of the study data collected on 13 July 2026. It contains 450 RGB-thermal image pairs from five apple seedlings and five corresponding final thermal point clouds.
 
-### 2. 采集流程
+### 2. Acquisition workflow
 
-使用 RGB 相机和 FLIR A655sc 热红外相机获取幼苗的多视角影像，按照逐帧对应关系提取图像，并提供热红外原始探测器数据及经辐射校准的摄氏温度图像。通过图像配准与多视角温度融合，将温度信息赋予三维点云。公开的原始图像具有时间对应关系，尚未进行像素级几何配准。
+An RGB camera and a FLIR A655sc thermal infrared camera captured multi-view recordings of the seedlings. Images were extracted using the recorded frame correspondence. Both native thermal detector values and radiometrically calibrated temperature images in degrees Celsius are provided. Image registration and multi-view temperature fusion were used to assign temperatures to the three-dimensional point clouds. The released native image pairs have temporal correspondence but have not undergone pixelwise geometric registration.
 
-### 3. 标注信息
+### 3. Annotation and metadata
 
-数据附有植株编号、采集日期、帧索引、时间记录及 RGB—热红外帧对应表。点云包含三维坐标、颜色、温度及温度来源等属性，可区分直接融合、空间插值和未赋温的点。
+The data include plant IDs, acquisition dates, frame indices, time records, and RGB-thermal frame correspondence tables. Point clouds contain three-dimensional coordinates, colors, temperatures, and temperature-source attributes. These attributes distinguish points assigned temperatures by direct fusion or spatial interpolation from points without assigned temperatures.
 
-### 4. 数据获取方式
+### 4. Data access
 
-数据通过 [GitHub 仓库](https://github.com/doudou1314520/RGB-and-thermal-infrared-registered-image-dataset-of-apple-seedlings)公开获取。图像和点云文件采用 Git LFS 存储，使用 Git 与 Git LFS 克隆仓库后，执行 `git lfs pull` 即可获取完整数据文件。
+The data are publicly accessible through this [GitHub repository](https://github.com/doudou1314520/RGB-and-thermal-infrared-registered-image-dataset-of-apple-seedlings). Image and point-cloud files are stored using Git LFS. Clone the repository with Git and Git LFS installed, then run `git lfs pull` to retrieve the complete data files.
+
+To request the program source code, please contact [doudou872h@gmail.com](mailto:doudou872h@gmail.com).
